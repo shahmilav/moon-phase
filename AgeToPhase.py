@@ -25,6 +25,6 @@ class AgeToPhase():
             return
 
         print("The current phase is " + currentPhase)
-        print(moonAge)
+        print(round(moonAge, 2))
 
         return currentPhase
