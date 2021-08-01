@@ -2,17 +2,17 @@ class DateToJulian():
 
     # Converts any date into Julian format.
 
-    def dateToJulian(d, m, y):
+    def dateToJulian(day_of_month, month, year):
 
-        if (m == 1 or m == 2):
-            y = y - 1
-            m = m + 12
+        if (month == 1 or month == 2):
+            year = year - 1
+            month = month + 12
 
-        v = (y / 100)
+        v = (year / 100)
         w = v / 4
         x = 2 - v + w
-        y = 365.25 * (y + 4716)
-        z = 30.6001 * (m + 1)
-        julianDay = x + d + y + z - 1524.5
+        year = 365.25 * (year + 4716)
+        z = 30.6001 * (month + 1)
+        julian_day = x + day_of_month + year + z - 1524.5
 
-        return julianDay
+        return julian_day

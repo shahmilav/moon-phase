@@ -1,12 +1,12 @@
 class FindMoonAge():
 
-    # Takes today's julianDay and converts it into the moonAge.
+    # Takes today's julian_day and converts it into the moon_age.
 
-    def findMoonAge(julianDay):
-        lunarCycle = 29.5306
+    def findMoonAge(julian_day):
+        lunar_cycle = 29.5306
 
-        daysSinceNewMoon = julianDay - 2451549.5
-        newMoons = daysSinceNewMoon / lunarCycle
-        moonAge = (newMoons - int(newMoons)) * lunarCycle
+        days_since_new_moon = julian_day - 2451549.5
+        new_moons = days_since_new_moon / lunar_cycle
+        moon_age = (new_moons - int(new_moons)) * lunar_cycle
 
-        return moonAge
+        return moon_age
