@@ -3,21 +3,68 @@ from DateToJulian import *
 from FindMoonAge import *
 from datetime import datetime
 
+from termcolor import colored
+
 
 class MoonPhase():
 
-    day_of_month = float(datetime.now().day)
-    month = float(datetime.now().month)
-    year = float(datetime.now().year)
+    # Starting screen: options are displayed.
+    print(colored("\nWELCOME TO MOON PHASES", 'magenta', attrs=['bold']))
 
-    yes_no = input('Would you like to pass a date? y/n: ')
+    # User types 'date' to pass a date.
+    print("\nTo pass a date, enter", end=" ")
+    print(colored("\'date\'", 'cyan'))
 
-    if(yes_no == 'y'):
+    # User enters 'today' to get today's moon phase.
+    print("To get today's phase, enter", end=" ")
+    print(colored("\'today\'", 'cyan'))
 
-        month = float(input('enter month: '))
-        day_of_month = float(input('enter day of month: '))
-        year = float(input('enter year: '))
+    # User enters 'age' to get current moon age
+    print("To get the moon age, enter", end=" ")
+    print(colored("\'age\'", 'cyan'))
 
-    AgeToPhase.getMoonPhase(
+    userInput = input('Which action would you like to take: ')
+
+
+    if(userInput == 'date'):
+
+        # Date entered in string format is converted into datetime format.
+        dateTimeStr = input('\nEnter any date (mm/dd/yy): ')
+        dateTimeObj = datetime.strptime(dateTimeStr, '%m/%d/%y')
+
+        # Getting day of month, month, and year of date passed. Used for calculations.
+        dayOfMonth = dateTimeObj.day
+        year = dateTimeObj.year
+        month = dateTimeObj.month
+
+        # Passes information into DateToJulian class, in turn passed to FindMoonAge, in turn passed to AgeToPhase.
+        AgeToPhase.getMoonPhase(
+            FindMoonAge.findMoonAge(
+                DateToJulian.dateToJulian(dayOfMonth, month, year), userInput), userInput, dayOfMonth, month, year)
+
+    elif(userInput == 'today'):
+
+        # Today's date info is converted into three seperate variables/
+        dayOfMonth = float(datetime.now().day)
+        month = float(datetime.now().month)
+        year = float(datetime.now().year)
+
+        # Passes information into DateToJulian class, in turn passed to FindMoonAge, in turn passed to AgeToPhase.
+        AgeToPhase.getMoonPhase(
+            FindMoonAge.findMoonAge(
+                DateToJulian.dateToJulian(dayOfMonth, month, year), userInput), userInput, dayOfMonth, month, year)
+
+    elif(userInput == 'age'):
+
+        # Gets current info using datetime.now(), and converts date into three sepeate variables.
+        dayOfMonth = float(datetime.now().day)
+        month = float(datetime.now().month)
+        year = float(datetime.now().year)
+
+        # Information is passed into DateToJulian class, which passes it to FindMoonAge. Class AgeToPhase is not needed.
         FindMoonAge.findMoonAge(
-            DateToJulian.dateToJulian(day_of_month, month, year)), yes_no, day_of_month, month, year)
+                DateToJulian.dateToJulian(dayOfMonth, month, year), userInput)
+
+    # In case the user did not enter a valid input ('date', 'today', or 'age').
+    else:
+        print(colored("Please enter valid input", 'red'))
