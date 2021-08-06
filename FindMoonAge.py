@@ -7,7 +7,7 @@ class FindMoonAge():
     def findMoonAge(julianDay, userInput):
         lunarCycle = 29.5306
 
-        daysSinceNewMoon = julianDay - 2415020    
+        daysSinceNewMoon = julianDay - 2451549.5    
         newMoons = daysSinceNewMoon / lunarCycle
         moonAge = (newMoons - int(newMoons)) * lunarCycle
 

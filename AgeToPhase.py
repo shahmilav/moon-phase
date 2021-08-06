@@ -24,18 +24,18 @@ class AgeToPhase():
         elif (23 < moonAge and moonAge < 29.5306):
             moonPhase = 'Waning Gibbous'
         else:
-            # In case of and invalid moon age.
-            print("error, moon age is invalid")
+            # In case of an invalid date. Anything before 1/6/2000.
+            print(colored("Error, given date is invalid. Only dates after 1/6/2000 work.", 'red', attrs=['blink']))
             return
 
         if(userInput == 'today'):
             print("\nThe phase today is ", end = "")
-            print(colored(moonPhase, 'green'))
+            print(colored(moonPhase, 'green' ) , end=".\n")
         elif(userInput == 'date'):
             print("The phase on ", end="")
             print(int(month), end="/")
             print(int(dayOfMonth), end="/")
             print(int(year), end=" is ")
-            print(colored(moonPhase, 'green'))
+            print(colored(moonPhase, 'green', ), end = ".\n")
 
         return moonPhase

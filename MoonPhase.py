@@ -9,7 +9,7 @@ from termcolor import colored
 class MoonPhase():
 
     # Starting screen: options are displayed.
-    print(colored("\nWELCOME TO MOON PHASES", 'magenta', attrs=['bold']))
+    print(colored("\nMOON PHASE CALCULATOR", 'magenta', attrs=['bold']))
 
     # User types 'date' to pass a date.
     print("\nTo pass a date, enter", end=" ")
@@ -67,4 +67,4 @@ class MoonPhase():
 
     # In case the user did not enter a valid input ('date', 'today', or 'age').
     else:
-        print(colored("Please enter valid input", 'red'))
+        print(colored("Please enter a valid input", 'red'))
