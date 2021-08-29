@@ -1,9 +1,9 @@
-from AgeToPhase import *
-from DateToJulian import *
-from FindMoonAge import *
-from datetime import datetime
-
 from termcolor import colored
+
+from AgeToPhase import AgeToPhase
+from DateToJulian import DateToJulian
+from FindMoonAge import FindMoonAge
+from datetime import datetime
 
 
 class MoonPhase():
@@ -23,48 +23,67 @@ class MoonPhase():
     print("To get the moon age, enter", end=" ")
     print(colored("\'age\'", 'cyan'))
 
-    userInput = input('Which action would you like to take: ')
+    # Get user input
+    user_input = input('Which action would you like to take: ')
 
+    # Assigning functions local names
+    date_to_julian = DateToJulian.date_to_julian
+    get_moon_phase = AgeToPhase.get_moon_phase
+    find_moon_age = FindMoonAge.find_moon_age
 
-    if(userInput == 'date'):
+    if(user_input == 'date'):
 
         # Date entered in string format is converted into datetime format.
-        dateTimeStr = input('\nEnter any date (mm/dd/yy): ')
-        dateTimeObj = datetime.strptime(dateTimeStr, '%m/%d/%y')
+        date_time_string = input('\nEnter any date (mm/dd/yy): ')
+        date_time = datetime.strptime(date_time_string, '%m/%d/%y')
 
-        # Getting day of month, month, and year of date passed. Used for calculations.
-        dayOfMonth = dateTimeObj.day
-        year = dateTimeObj.year
-        month = dateTimeObj.month
+        # Getting day of month, month, and year of date passed.
+        # Used for calculations.
+        day_of_month = date_time.day
+        year = date_time.year
+        month = date_time.month
 
-        # Passes information into DateToJulian class, in turn passed to FindMoonAge, in turn passed to AgeToPhase.
-        AgeToPhase.getMoonPhase(
-            FindMoonAge.findMoonAge(
-                DateToJulian.dateToJulian(dayOfMonth, month, year), userInput), userInput, dayOfMonth, month, year)
+        # Passes information into DateToJulian class,
+        # in turn passed to FindMoonAge, in turn passed to AgeToPhase.
+        get_moon_phase(
+            find_moon_age(
+                date_to_julian(
+                    day_of_month, month, year),
+                user_input),
+            user_input, day_of_month, month, year)
 
-    elif(userInput == 'today'):
+    elif(user_input == 'today'):
 
         # Today's date info is converted into three seperate variables/
-        dayOfMonth = float(datetime.now().day)
+        day_of_month = float(datetime.now().day)
         month = float(datetime.now().month)
         year = float(datetime.now().year)
 
-        # Passes information into DateToJulian class, in turn passed to FindMoonAge, in turn passed to AgeToPhase.
-        AgeToPhase.getMoonPhase(
-            FindMoonAge.findMoonAge(
-                DateToJulian.dateToJulian(dayOfMonth, month, year), userInput), userInput, dayOfMonth, month, year)
+        # Passes information into DateToJulian class,
+        # in turn passed to FindMoonAge, in turn passed to AgeToPhase.
+        get_moon_phase(
+            find_moon_age(
+                date_to_julian(
+                    day_of_month, month, year),
+                user_input),
+            user_input, day_of_month, month, year)
 
-    elif(userInput == 'age'):
+    elif(user_input == 'age'):
 
-        # Gets current info using datetime.now(), and converts date into three sepeate variables.
-        dayOfMonth = float(datetime.now().day)
+        # Gets current info using datetime.now(),
+        # and converts date into three seperate variables.
+        day_of_month = float(datetime.now().day)
         month = float(datetime.now().month)
         year = float(datetime.now().year)
 
-        # Information is passed into DateToJulian class, which passes it to FindMoonAge. Class AgeToPhase is not needed.
-        FindMoonAge.findMoonAge(
-                DateToJulian.dateToJulian(dayOfMonth, month, year), userInput)
+        # Information is passed into DateToJulian class,
+        # which passes it to FindMoonAge. Class AgeToPhase is not needed.
+        find_moon_age(
+            date_to_julian(
+                day_of_month, month, year),
+            user_input)
 
     # In case the user did not enter a valid input ('date', 'today', or 'age').
     else:
-        print(colored("Please enter a valid input", 'red'))
+        print(colored(
+            "Please enter a valid input", 'red'))

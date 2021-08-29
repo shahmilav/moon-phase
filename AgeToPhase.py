@@ -1,41 +1,41 @@
 from termcolor import colored
 
 
+# Takes the moon age and converts it into the phase of the moon.
+
 class AgeToPhase():
+    def get_moon_phase(moon_age, user_input, day_of_month, month, year):
 
-    # Takes the moon age and converts it into the phase of the moon.
-
-    def getMoonPhase(moonAge, userInput, dayOfMonth, month, year):
-
-        if (0 <= moonAge and 1 >= moonAge):
-            moonPhase = 'New Moon'
-        elif (1 < moonAge and moonAge < 7):
-            moonPhase = 'Waxing Cresent'
-        elif (7 <= moonAge and 8 >= moonAge):
-            moonPhase = 'First Quarter'
-        elif (8 < moonAge and moonAge < 15):
-            moonPhase = 'Waxing Gibbous'
-        elif (15 <= moonAge and 16 >= moonAge):
-            moonPhase = 'Full Moon'
-        elif (16 < moonAge and moonAge < 22):
-            moonPhase = 'Waning Gibbous'
-        elif (22 <= moonAge and 23 >= moonAge):
-            moonPhase = 'Last Quarter'
-        elif (23 < moonAge and moonAge < 29.5306):
-            moonPhase = 'Waning Gibbous'
+        if (0 <= moon_age and 1 >= moon_age):
+            moon_phase = 'New Moon'
+        elif (1 < moon_age and moon_age < 7):
+            moon_phase = 'Waxing Cresent'
+        elif (7 <= moon_age and 8 >= moon_age):
+            moon_phase = 'First Quarter'
+        elif (8 < moon_age and moon_age < 15):
+            moon_phase = 'Waxing Gibbous'
+        elif (15 <= moon_age and 16 >= moon_age):
+            moon_phase = 'Full Moon'
+        elif (16 < moon_age and moon_age < 22):
+            moon_phase = 'Waning Gibbous'
+        elif (22 <= moon_age and 23 >= moon_age):
+            moon_phase = 'Last Quarter'
+        elif (23 < moon_age and moon_age < 29.5306):
+            moon_phase = 'Waning Gibbous'
         else:
             # In case of an invalid date. Anything before 1/6/2000.
-            print(colored("Error, given date is invalid. Only dates after 1/6/2000 work.", 'red', attrs=['blink']))
+            print(colored("Error, given date is invalid. Only dates after "
+                          "1/6/2000 work.", 'red', attrs=['blink']))
             return
 
-        if(userInput == 'today'):
-            print("\nThe phase today is ", end = "")
-            print(colored(moonPhase, 'green' ) , end=".\n")
-        elif(userInput == 'date'):
+        if(user_input == 'today'):
+            print("\nThe phase today is ", end="")
+            print(colored(moon_phase, 'green'), end=".\n")
+        elif(user_input == 'date'):
             print("The phase on ", end="")
             print(int(month), end="/")
-            print(int(dayOfMonth), end="/")
+            print(int(day_of_month), end="/")
             print(int(year), end=" is ")
-            print(colored(moonPhase, 'green', ), end = ".\n")
+            print(colored(moon_phase, 'green', ), end=".\n")
 
-        return moonPhase
+        return moon_phase
