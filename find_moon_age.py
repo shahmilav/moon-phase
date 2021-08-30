@@ -13,7 +13,7 @@ class FindMoonAge:
     """Has the function to find the moon age."""
 
     def find_moon_age(self, user_input, julian_day):
-        """Use a julian day, this function returns the moon age.
+        """With a julian day, return the moon age.
 
         If the user inputted 'age', it also prints out the result,
         the moon age.

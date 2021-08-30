@@ -14,7 +14,7 @@ from datetime import datetime as dt
 from termcolor import colored
 from age_to_phase import AgeToPhase
 from date_to_julian import DateToJulian
-from print_result import PrintResult
+from print_result import PrintResult as pr
 from find_moon_age import FindMoonAge
 
 
@@ -43,7 +43,6 @@ class MoonPhase:
     date_to_julian = DateToJulian.date_to_julian
     get_moon_phase = AgeToPhase.get_moon_phase
     find_moon_age = FindMoonAge.find_moon_age
-    print_result = PrintResult.print_result
 
     if user_input == 'date':
 
@@ -63,8 +62,8 @@ class MoonPhase:
         julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
         moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
         moon_phase = get_moon_phase(AgeToPhase, moon_age)
-        print_result(PrintResult, user_input,
-                     month, day_of_month, year, moon_phase)
+        pr.print_result(pr, user_input,
+                        month, day_of_month, year, moon_phase)
 
     elif user_input == 'today':
 
@@ -79,8 +78,8 @@ class MoonPhase:
         julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
         moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
         moon_phase = get_moon_phase(AgeToPhase, moon_age)
-        print_result(PrintResult, user_input,
-                     month, day_of_month, year, moon_phase)
+        pr.print_result(pr, user_input,
+                        month, day_of_month, year, moon_phase)
 
     elif user_input == 'age':
 

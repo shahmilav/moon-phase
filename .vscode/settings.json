@@ -5,4 +5,5 @@
     "python.linting.pylintEnabled": true,
     "python.linting.pycodestyleEnabled": true,
     "python.linting.pydocstyleEnabled": true,
+    "python.linting.pylamaEnabled": true
 }
