@@ -1,6 +1,16 @@
-"""This module is the main module for the Moon Phases project. When you need to
-find the Moon phase for any day, or moon age for today, run this file."""
-from datetime import datetime
+"""Contains a class that is the main class in the Moon Phases package.
+
+When run, just answer the prompts. The input is saved as three of the
+following:
+            user_input = ['date', 'today', 'age']
+
+If user_input is 'date', a second prompt is printed to ask which date the user
+would like to pass. The date cannot be anytime before 01-06-2000.
+
+If user_input is 'today', today's moon phase is printed.
+If user_input is 'age', today's moon age is printed.
+"""
+from datetime import datetime as dt
 from termcolor import colored
 from age_to_phase import AgeToPhase
 from date_to_julian import DateToJulian
@@ -9,7 +19,8 @@ from find_moon_age import FindMoonAge
 
 
 class MoonPhase:
-    """Main class, run when you need to find the moon phase"""
+    """Main class, run when you need to find the moon phase."""
+
     # Starting screen: options are displayed.
     print(colored("\nMOON PHASE CALCULATOR", 'magenta', attrs=['bold']))
 
@@ -38,7 +49,7 @@ class MoonPhase:
 
         # Date entered in string format is converted into datetime format.
         date_time_string = input('\nEnter any date (mm/dd/yy): ')
-        date_time = datetime.strptime(date_time_string, '%m/%d/%y')
+        date_time = dt.strptime(date_time_string, '%m/%d/%y')
 
         # Getting day of month, month, and year of date passed.
         # Used for calculations.
@@ -58,9 +69,9 @@ class MoonPhase:
     elif user_input == 'today':
 
         # Today's date info is converted into three seperate variables/
-        day_of_month = float(datetime.now().day)
-        month = float(datetime.now().month)
-        year = float(datetime.now().year)
+        day_of_month = float(dt.now().day)
+        month = float(dt.now().month)
+        year = float(dt.now().year)
 
         # Passes information into DateToJulian class,
         # in turn passed to FindMoonAge, in turn passed to AgeToPhase.
@@ -75,9 +86,9 @@ class MoonPhase:
 
         # Gets current info using datetime.now(),
         # and converts date into three seperate variables.
-        day_of_month = float(datetime.now().day)
-        month = float(datetime.now().month)
-        year = float(datetime.now().year)
+        day_of_month = float(dt.now().day)
+        month = float(dt.now().month)
+        year = float(dt.now().year)
 
         # Information is passed into DateToJulian class,
         # which passes it to FindMoonAge. Class AgeToPhase is not needed.

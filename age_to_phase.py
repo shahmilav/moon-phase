@@ -1,5 +1,4 @@
-"""This module contains a method that converts the moon age into a phase
-in English.
+"""This module contains a method that converts the moon age into a phase.
 
 The phases are ['New Moon', 'Waxing Cresent', 'First Quarter',
                 'Waxing Gibbous', 'Full Moon', 'Waning Gibbous',
@@ -14,11 +13,10 @@ from termcolor import colored
 
 # Takes the moon age and converts it into the phase of the moon.
 class AgeToPhase:
-    """Contains the method that gets the moon phase"""
+    """Contains the method that gets the moon phase."""
 
     def get_moon_phase(self, moon_age):
-        """Takes in the moon age, and converts it into the moon phase"""
-
+        """Take in the moon age, and convert it into the moon phase."""
         if 0 <= moon_age <= 1:
             moon_phase = 'New Moon'
         elif 1 < moon_age < 7:

@@ -1,5 +1,4 @@
-"""This module contains a method that converts the Julian Day provided by
-DateToJulian.date_to_julian() into the moon age.
+"""Contains a method that converts the Julian Day into the moon age.
 
 The possible ages are not 100% accurate. The moon age is
 always < 0 and > 29.5306.
@@ -11,12 +10,14 @@ from termcolor import colored
 
 
 class FindMoonAge:
-    """Has the function to find the moon age"""
+    """Has the function to find the moon age."""
 
     def find_moon_age(self, user_input, julian_day):
-        """Using a julian day, this function returns the moon age.
-           If the user inputted 'age', it also prints out the result,
-           the moon age. """
+        """Use a julian day, this function returns the moon age.
+
+        If the user inputted 'age', it also prints out the result,
+        the moon age.
+        """
         lunar_cycle = 29.5306
 
         days_since_new_moon = julian_day - 2451549.5
