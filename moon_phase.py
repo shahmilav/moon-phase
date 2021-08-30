@@ -1,13 +1,15 @@
-from termcolor import colored
-
-from AgeToPhase import AgeToPhase
-from DateToJulian import DateToJulian
-from FindMoonAge import FindMoonAge
+"""This module is the main module for the Moon Phases project. When you need to
+find the Moon phase for any day, or moon age for today, run this file."""
 from datetime import datetime
+from termcolor import colored
+from age_to_phase import AgeToPhase
+from date_to_julian import DateToJulian
+from print_result import PrintResult
+from find_moon_age import FindMoonAge
 
 
-class MoonPhase():
-
+class MoonPhase:
+    """Main class, run when you need to find the moon phase"""
     # Starting screen: options are displayed.
     print(colored("\nMOON PHASE CALCULATOR", 'magenta', attrs=['bold']))
 
@@ -26,12 +28,13 @@ class MoonPhase():
     # Get user input
     user_input = input('Which action would you like to take: ')
 
-    # Assigning functions local names
+    # Assigning local names to functions
     date_to_julian = DateToJulian.date_to_julian
     get_moon_phase = AgeToPhase.get_moon_phase
     find_moon_age = FindMoonAge.find_moon_age
+    print_result = PrintResult.print_result
 
-    if(user_input == 'date'):
+    if user_input == 'date':
 
         # Date entered in string format is converted into datetime format.
         date_time_string = input('\nEnter any date (mm/dd/yy): ')
@@ -45,14 +48,14 @@ class MoonPhase():
 
         # Passes information into DateToJulian class,
         # in turn passed to FindMoonAge, in turn passed to AgeToPhase.
-        get_moon_phase(
-            find_moon_age(
-                date_to_julian(
-                    day_of_month, month, year),
-                user_input),
-            user_input, day_of_month, month, year)
+        # Printed using print_result.
+        julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
+        moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
+        moon_phase = get_moon_phase(AgeToPhase, moon_age)
+        print_result(PrintResult, user_input,
+                     month, day_of_month, year, moon_phase)
 
-    elif(user_input == 'today'):
+    elif user_input == 'today':
 
         # Today's date info is converted into three seperate variables/
         day_of_month = float(datetime.now().day)
@@ -61,14 +64,14 @@ class MoonPhase():
 
         # Passes information into DateToJulian class,
         # in turn passed to FindMoonAge, in turn passed to AgeToPhase.
-        get_moon_phase(
-            find_moon_age(
-                date_to_julian(
-                    day_of_month, month, year),
-                user_input),
-            user_input, day_of_month, month, year)
+        # Printed using print_result.
+        julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
+        moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
+        moon_phase = get_moon_phase(AgeToPhase, moon_age)
+        print_result(PrintResult, user_input,
+                     month, day_of_month, year, moon_phase)
 
-    elif(user_input == 'age'):
+    elif user_input == 'age':
 
         # Gets current info using datetime.now(),
         # and converts date into three seperate variables.
@@ -78,10 +81,9 @@ class MoonPhase():
 
         # Information is passed into DateToJulian class,
         # which passes it to FindMoonAge. Class AgeToPhase is not needed.
-        find_moon_age(
-            date_to_julian(
-                day_of_month, month, year),
-            user_input)
+
+        julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
+        moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
 
     # In case the user did not enter a valid input ('date', 'today', or 'age').
     else:
