@@ -11,7 +11,7 @@ If user_input is 'today', today's moon phase is printed.
 If user_input is 'age', today's moon age is printed.
 """
 from datetime import datetime as dt
-from termcolor import colored as clr
+from termcolor import cprint
 from age_to_phase import AgeToPhase
 from date_to_julian import DateToJulian
 from print_result import PrintResult as pr
@@ -22,19 +22,19 @@ class MoonPhase:
     """Main class, run when you need to find the moon phase."""
 
     # Starting screen: options are displayed.
-    print(clr("\nMOON PHASE CALCULATOR", 'magenta', attrs=['bold']))
+    cprint("\nMOON PHASE CALCULATOR", 'magenta', attrs=['bold'])
 
     # User types 'date' to pass a date.
     print("\nTo pass a date, enter", end=" ")
-    print(clr("\'date\'", 'cyan'))
+    cprint("\'date\'", 'cyan')
 
     # User enters 'today' to get today's moon phase.
     print("To get today's phase, enter", end=" ")
-    print(clr("\'today\'", 'cyan'))
+    cprint("\'today\'", 'cyan')
 
     # User enters 'age' to get current moon age
     print("To get the moon age, enter", end=" ")
-    print(clr("\'age\'", 'cyan'))
+    cprint("\'age\'", 'cyan')
 
     # Get user input
     user_input = input("Which action would you like to take: ")
@@ -97,5 +97,5 @@ class MoonPhase:
 
     # In case the user did not enter a valid input ('date', 'today', or 'age').
     else:
-        print(clr(
-            "Please enter a valid input", 'red'))
+        cprint(
+            "Please enter a valid input", 'red')

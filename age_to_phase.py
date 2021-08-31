@@ -8,7 +8,7 @@ Using the moon age, the method runs through a series of if-statements to
 determine the moon phase.
 
 """
-from termcolor import colored as clr
+from termcolor import cprint
 
 
 # Takes the moon age and converts it into the phase of the moon.
@@ -35,8 +35,8 @@ class AgeToPhase:
             moon_phase = 'Waning Crescent'
         else:
             # In case of an invalid date. Anything before 1/6/2000.
-            print(clr("Error, given date is invalid. Only dates after "
-                      "1/6/2000 work.", 'red', attrs=['blink']))
+            cprint("Error, given date is invalid. Only dates after "
+                   "1/6/2000 work.", 'red', attrs=['blink'])
             return 0
 
         return moon_phase
