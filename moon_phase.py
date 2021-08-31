@@ -2,7 +2,7 @@
 
 When run, just answer the prompts. The input is saved as three of the
 following:
-            user_input = ['date', 'today', 'age']
+            user_input = ['date', 'today', 'age']. Everything else is invalid.
 
 If user_input is 'date', a second prompt is printed to ask which date the user
 would like to pass. The date cannot be anytime before 01-06-2000.
@@ -37,7 +37,7 @@ class MoonPhase:
     print(clr("\'age\'", 'cyan'))
 
     # Get user input
-    user_input = input('Which action would you like to take: ')
+    user_input = input("Which action would you like to take: ")
 
     # Assigning local names to functions
     date_to_julian = DateToJulian.date_to_julian
@@ -47,7 +47,7 @@ class MoonPhase:
     if user_input == 'date':
 
         # Date entered in string format is converted into datetime format.
-        date_time_string = input('\nEnter any date (mm/dd/yy): ')
+        date_time_string = input("\nEnter any date (mm/dd/yy): ")
         date_time = dt.strptime(date_time_string, '%m/%d/%y')
 
         # Getting day of month, month, and year of date passed.
@@ -58,7 +58,7 @@ class MoonPhase:
 
         # Passes information into DateToJulian class,
         # in turn passed to FindMoonAge, in turn passed to AgeToPhase.
-        # Printed using print_result.
+        # Printed using pr.rint_result.
         julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
         moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
         moon_phase = get_moon_phase(AgeToPhase, moon_age)
@@ -74,7 +74,7 @@ class MoonPhase:
 
         # Passes information into DateToJulian class,
         # in turn passed to FindMoonAge, in turn passed to AgeToPhase.
-        # Printed using print_result.
+        # Printed using pr.print_result.
         julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
         moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
         moon_phase = get_moon_phase(AgeToPhase, moon_age)
