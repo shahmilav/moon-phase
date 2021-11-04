@@ -6,7 +6,7 @@ always < 0 and > 29.5306.
 Using Julian Day, the method runs through a series of calculations to
 determine the moon age.
 """
-from termcolor import cprint
+from termcolor import colored
 
 
 class FindMoonAge:
@@ -26,6 +26,6 @@ class FindMoonAge:
 
         if user_input == 'age':
             print("\nThe moon age is", end=" ")
-            cprint((moon_age, 'green'), end=" days\n\n")
+            print(colored(moon_age, 'green'), end=" days\n\n")
 
         return moon_age

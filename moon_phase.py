@@ -3,10 +3,8 @@
 When run, just answer the prompts. The input is saved as three of the
 following:
             user_input = ['date', 'today', 'age']. Everything else is invalid.
-
 If user_input is 'date', a second prompt is printed to ask which date the user
 would like to pass. The date cannot be anytime before 01-06-2000.
-
 If user_input is 'today', today's moon phase is printed.
 If user_input is 'age', today's moon age is printed.
 """

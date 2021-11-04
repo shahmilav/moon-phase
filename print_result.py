@@ -5,7 +5,7 @@ Based on the user_input, the information printed is different.
 Using the moon phase provided by AgeToPhase.get_moon_phase, it prints out
 the moon phase.
 """
-from termcolor import cprint
+from termcolor import colored
 
 
 class PrintResult:
@@ -15,11 +15,11 @@ class PrintResult:
         """Print out the moon phase using the information provided."""
         if user_input == 'today':
             print("\nThe phase today is ", end="")
-            cprint((moon_phase, 'green'), end=".\n\n")
+            print(colored(moon_phase, 'green'), end=".\n\n")
 
         elif user_input == 'date':
             print("The phase on ", end="")
             print(int(month), end="/")
             print(int(day_of_month), end="/")
             print(int(year), end=" is ")
-            cprint((moon_phase, 'green', ), end=".\n\n")
+            print(colored(moon_phase, 'green', ), end=".\n\n")
