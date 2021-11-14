@@ -24,8 +24,8 @@ class FindMoonAge:
         new_moons = days_since_new_moon / lunar_cycle
         moon_age = (new_moons - int(new_moons)) * lunar_cycle
 
-        if user_input == 'age':
+        if user_input == "age":
             print("\nThe moon age is", end=" ")
-            print(colored(moon_age, 'green'), end=" days\n\n")
+            print(colored(moon_age, "green"), end=" days\n\n")
 
         return moon_age
