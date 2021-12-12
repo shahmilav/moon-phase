@@ -18,21 +18,21 @@ class AgeToPhase:
     def get_moon_phase(self, moon_age):
         """Take in the moon age, and convert it into the moon phase."""
         if 0 <= moon_age <= 1:
-            moon_phase = "New Moon"
+            moon_phase = "New Moon 🌑"
         elif 1 < moon_age < 7:
-            moon_phase = "Waxing Crescent"
+            moon_phase = "Waxing Crescent 🌒"
         elif 7 <= moon_age <= 8:
-            moon_phase = "First Quarter"
+            moon_phase = "First Quarter 🌓"
         elif 8 < moon_age < 15:
-            moon_phase = "Waxing Gibbous"
+            moon_phase = "Waxing Gibbous 🌔"
         elif 15 <= moon_age <= 16:
-            moon_phase = "Full Moon"
+            moon_phase = "Full Moon 🌕"
         elif 16 < moon_age < 22:
-            moon_phase = "Waning Gibbous"
+            moon_phase = "Waning Gibbous 🌖"
         elif 22 <= moon_age <= 23:
-            moon_phase = "Last Quarter"
+            moon_phase = "Last Quarter 🌗"
         elif 23 < moon_age < 29.5306:
-            moon_phase = "Waning Crescent"
+            moon_phase = "Waning Crescent 🌘"
         else:
             # In case of an invalid date. Anything before 1/6/2000.
             cprint(
