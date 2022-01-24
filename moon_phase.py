@@ -1,5 +1,5 @@
 """Contains a class that is the main class in the Moon Phases package.
-
+ 
 When run, just answer the prompts. The input is saved as three of the
 following:
             user_input = ['date', 'today', 'age']. Everything else is invalid.
@@ -59,7 +59,7 @@ class MoonPhase:
         # in turn passed to FindMoonAge, in turn passed to AgeToPhase.
         # Printed using pr.rint_result.
         julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
-        moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
+        moon_age = find_moon_age(FindMoonAge, user_input, julian_day)   
         moon_phase = get_moon_phase(AgeToPhase, moon_age)
         pr.print_result(pr, user_input, month, day_of_month, year, moon_phase)
 
