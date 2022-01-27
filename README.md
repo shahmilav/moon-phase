@@ -1,7 +1,7 @@
 <h1 align="center"> Moon Phase Calculator </h1>
 
 <p align="center">
-  A simple command line tool to find the moon phase (or age) for today or any day in history<sup>1</sup> (or future)!
+  A simple command line tool made in Python to find the moon phase (or age) for today or any day in history<sup>1</sup> (or future)!
   And in my opinion, it looks pretty too.
 </p>
 
