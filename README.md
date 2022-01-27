@@ -1,7 +1,9 @@
-# Moon Phase Calculator
+<h1 align="center"> Moon Phase Calculator </h1>
 
-A simple command line tool to find the moon phase (or age) for today or any day in history<sup>1</sup> (or future)!
-Looks pretty too.
+<p align="center">
+  A simple command line tool to find the moon phase (or age) for today or any day in history<sup>1</sup> (or future)!
+  And in my opinion, it looks pretty too.
+</p>
 
 ![Screenshot of the program in action](https://github.com/shahmilav/moon-phase/blob/main/images/screenshot-moon.png)
 
