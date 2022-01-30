@@ -10,11 +10,12 @@ If user_input is 'today', today's moon phase is printed.
 If user_input is 'age', today's moon age is printed.
 """
 from datetime import datetime as dt
-from termcolor import cprint
+
 from age_to_phase import AgeToPhase
 from date_to_julian import DateToJulian
-from print_result import PrintResult as pr
 from find_moon_age import FindMoonAge
+from print_result import PrintResult as pr
+from termcolor import cprint
 
 
 class MoonPhase:
@@ -46,8 +47,8 @@ class MoonPhase:
     if user_input == "date":
 
         # Date entered in string format is converted into datetime format.
-        date_time_string = input("\nEnter any date (mm/dd/yy): ")
-        date_time = dt.strptime(date_time_string, "%m/%d/%y")
+        date_time_string = input("\nEnter any date (mm/dd/yyyy): ")
+        date_time = dt.strptime(date_time_string, "%m/%d/%Y")
 
         # Getting day of month, month, and year of date passed.
         # Used for calculations.
@@ -59,7 +60,7 @@ class MoonPhase:
         # in turn passed to FindMoonAge, in turn passed to AgeToPhase.
         # Printed using pr.rint_result.
         julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
-        moon_age = find_moon_age(FindMoonAge, user_input, julian_day)   
+        moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
         moon_phase = get_moon_phase(AgeToPhase, moon_age)
         pr.print_result(pr, user_input, month, day_of_month, year, moon_phase)
 
@@ -81,7 +82,7 @@ class MoonPhase:
     elif user_input == "age":
 
         # Gets current info using datetime.now(),
-        # and converts date into three seperate variables.
+        # and converts date into three separate variables.
         day_of_month = float(dt.now().day)
         month = float(dt.now().month)
         year = float(dt.now().year)
@@ -94,4 +95,4 @@ class MoonPhase:
 
     # In case the user did not enter a valid input ('date', 'today', or 'age').
     else:
-        cprint("Please enter a valid input", "red")
+        cprint("`" + user_input + "`" + " is not valid. Please enter a valid input.", "red")

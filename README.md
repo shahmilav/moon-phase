@@ -8,11 +8,16 @@
 ![Screenshot of the program in action](https://github.com/shahmilav/moon-phase/blob/main/images/screenshot-moon.png)
 
 ### Important Note
-This tool is **not** perfect. It is a very simple algorithm that accurately keeps track of the phase, but assume a small margin of error for the moon age.
+
+This tool is **not** perfect. It is a very simple algorithm that accurately keeps track of the phase, but assume a small
+margin of error for the moon age.
 
 ## Want the same look as the screenshot?
+
 Here are a few instructions to help you:
-* Set the font of your terminal emulator to [JetBrains Mono](https://www.jetbrains.com/lp/mono/). Ligatures do not matter.
+
+* Set the font of your terminal emulator to [JetBrains Mono](https://www.jetbrains.com/lp/mono/). Ligatures do not
+  matter.
 * Set the colorscheme of your terminal to [Nord](https://www.nordtheme.com).
 
 <sup>1</sup>well, I lied, the minimum date is 01-06-2000
