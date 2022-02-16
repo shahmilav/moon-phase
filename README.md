@@ -16,7 +16,7 @@ margin of error for the moon age.
 
 Here are a few instructions to help you:
 
-[X] Set your terminal font to [JetBrains Mono](https://www.jetbrains.com/lp/mono/). 
-[X] Set the colorscheme of your terminal to [Nord](https://www.nordtheme.com).
+* [X] Set your terminal font to [JetBrains Mono](https://www.jetbrains.com/lp/mono/). 
+* [X] Set the colorscheme of your terminal to [Nord](https://www.nordtheme.com).
 
 <sup>1</sup>well, I lied, the minimum date is 01-06-2000
