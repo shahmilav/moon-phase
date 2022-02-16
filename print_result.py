@@ -9,9 +9,9 @@ from termcolor import colored
 
 
 class PrintResult:
-    """This class contains the print_result method."""
+    """This class contains the PRINT_RESULT method."""
 
-    def print_result(self, user_input, month, day_of_month, year, moon_phase):
+    def print_result(user_input, month, day_of_month, year, moon_phase):
         """Print out the moon phase using the information provided."""
         if user_input == 'today':
             print("\nThe phase today is ", end="")
