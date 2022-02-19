@@ -62,7 +62,8 @@ class MoonPhase:
         julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
         moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
         moon_phase = get_moon_phase(AgeToPhase, moon_age)
-        PRINT_RESULT.print_result(user_input, month, day_of_month, year, moon_phase)
+        PRINT_RESULT.print_result(user_input, month, day_of_month, year,
+                                  moon_phase)
 
     elif user_input == "today":
 
@@ -77,7 +78,8 @@ class MoonPhase:
         julian_day = date_to_julian(DateToJulian, day_of_month, month, year)
         moon_age = find_moon_age(FindMoonAge, user_input, julian_day)
         moon_phase = get_moon_phase(AgeToPhase, moon_age)
-        PRINT_RESULT.print_result(user_input, month, day_of_month, year, moon_phase)
+        PRINT_RESULT.print_result(user_input, month, day_of_month, year,
+                                  moon_phase)
 
     elif user_input == "age":
 
@@ -95,4 +97,6 @@ class MoonPhase:
 
     # In case the user did not enter a valid input ('date', 'today', or 'age').
     else:
-        cprint("`" + user_input + "`" + " is not valid. Please enter a valid input.", "red")
+        cprint(
+            "`" + user_input + "`" +
+            " is not valid. Please enter a valid input.", "red")

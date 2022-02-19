@@ -36,7 +36,8 @@ class AgeToPhase:
         else:
             # In case of an invalid date. Anything before 1/6/2000.
             cprint(
-                "Given date is invalid. Only dates after " "1/6/2000 work.",
+                "Given date is invalid. Only dates after "
+                "1/6/2000 work.",
                 "red",
                 attrs=["blink"],
             )

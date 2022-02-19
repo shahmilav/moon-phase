@@ -22,4 +22,7 @@ class PrintResult:
             print(int(month), end="/")
             print(int(day_of_month), end="/")
             print(int(year), end=" is ")
-            print(colored(moon_phase, 'green', ), end=".\n\n")
+            print(colored(
+                moon_phase,
+                'green',
+            ), end=".\n\n")
