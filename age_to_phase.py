@@ -1,12 +1,11 @@
 """This module contains a method that converts the moon age into a phase.
 
-The phases are ['New Moon', 'Waxing Cresent', 'First Quarter',
+The phases are ['New Moon', 'Waxing Crescent', 'First Quarter',
                 'Waxing Gibbous', 'Full Moon', 'Waning Gibbous',
                 'Last Quarter', 'Waning Crescent']
 
 Using the moon age, the method runs through a series of if-statements to
 determine the moon phase.
-
 """
 from termcolor import cprint
 
@@ -14,6 +13,9 @@ from termcolor import cprint
 # Takes the moon age and converts it into the phase of the moon.
 class AgeToPhase:
     """Contains the method that gets the moon phase."""
+
+    def __init__(self):
+        pass
 
     def get_moon_phase(self, moon_age):
         """Take in the moon age, and convert it into the moon phase."""
