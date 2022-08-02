@@ -12,6 +12,9 @@ from termcolor import colored
 class FindMoonAge:
     """Has the function to find the moon age."""
 
+    def __init__(self):
+        pass
+
     def find_moon_age(self, user_input, julian_day):
         """With a julian day, return the moon age.
 
