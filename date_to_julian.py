@@ -11,9 +11,10 @@ to determine the Julian Day.
 class DateToJulian:
     """Contains a method that takes the date, and converts into Julian Date."""
 
-    # Handles calculations that convert a given date into a Julian Day.
     def date_to_julian(self, day_of_month, month, year):
-        """Convert a given date into a Julian Day."""
+        """Convert a given date into a Julian Day.
+        You are not expected to understand this. 
+        """
         if month in (1, 2):
             year = year - 1
             month = month + 12
