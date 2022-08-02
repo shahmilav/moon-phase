@@ -11,6 +11,9 @@ from termcolor import colored
 class PrintResult:
     """This class contains the PRINT_RESULT method."""
 
+    def __init__(self):
+        pass
+
     def print_result(user_input, month, day_of_month, year, moon_phase):
         """Print out the moon phase using the information provided."""
         if user_input == 'today':
