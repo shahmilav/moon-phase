@@ -67,7 +67,7 @@ class MoonPhase:
 
     elif user_input == "today":
 
-        # Today's date info is converted into three seperate variables/
+        # Today's date info is converted into three separate variables/
         day_of_month = float(dt.now().day)
         month = float(dt.now().month)
         year = float(dt.now().year)
